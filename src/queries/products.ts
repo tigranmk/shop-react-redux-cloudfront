@@ -11,7 +11,8 @@ export function useAvailableProducts() {
       const res = await axios.get(
         `${import.meta.env.VITE_PRODUCTS}`
       );
-      return res.data.raspberryPiModels;
+      const filteredProducts = res.data.products.filter((product: AvailableProduct) => !!product);
+      return filteredProducts;
     }
   );
 }

@@ -13,6 +13,7 @@ export default function Products() {
   if (isLoading) {
     return <Typography>Loading...</Typography>;
   }
+  console.log(data);
 
   return (
     <Grid container spacing={4}>
@@ -29,7 +30,7 @@ export default function Products() {
             />
             <CardContent sx={{ flexGrow: 1 }}>
               <Typography gutterBottom variant="h5" component="h2">
-                {product.name}
+                {product.title}
               </Typography>
               <Typography>{formatAsPrice(product.price)}</Typography>
             </CardContent>
